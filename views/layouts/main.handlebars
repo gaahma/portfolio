@@ -1,42 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 <head>
-	<title>Index</title>
-	<link rel="stylesheet" type="text/css" href="../../assets/css/reset.css">
+	<title>About Me</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="container-fluid" id="wrapper">
-	  	<div class="container-fluid">
-			<nav class="navbar navbar-default">
-		   		<div class="navbar-header">
-		      		<div class="navbar-brand">Adam Haag</div> <!-- This is an anchor element by default.  But it works as a div if a link is not needed-->
-		    	</div>	
-		    	<ul class="nav navbar-nav">
-		        	<li><a href="#">Portfolio</a></li>
-		        	<li><a href="#">Contact</a></li>
-		        	<li><a href="#">About</a></li>
-		    	</ul>
-			</nav>
-		</div>
+		<nav class="navbar navbar-inverse navbar-static-top">
+	  		<div class="container">
+		  		<div class="navbar-header">
+		  			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>                        
+      				</button>
+		  			<a class="navbar-brand" href="/">
+						Adam Haag
+		  			</a>
+		  		</div>
+		  		<div class="collapse navbar-collapse" id="myNavbar">
+			    	<ul class="nav navbar-nav navbar-right">
+			        	<li><a href="/portfolio">Portfolio</a></li>
+			        	<li><a href="/contact">Contact</a></li>
+			        	<li><a href="/">About</a></li>
+			    	</ul>
+			    </div>	
+		    </div>	
+		</nav>
 
 		<div class="container" id="content">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="page-header">
+            {{{body}}}
 
-			<aside class="panel panel-default content-style" id="connect">
-				<header class="panel-header header-style"><h3>Connect with me</h3></header>
-				<hr>
-				<div class="panel-body">Main content</div>
-			
-	
-			</aside>
-			<div class="jumbotron content-style">
-        {{{body}}}
-			</div>	
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="panel panel-default color-grey">
+						<h1 class="panel-title">
+							<div class="page-header connect-header">
+								Connect with me
+							</div>
+						</h1>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-xs-4 text-center">
+									<a href="#">
+										<img src="assets/images/linkedin.png" alt="LinkedIn" class="img-responsive">
+								</div>
+								<div class="col-xs-4 text-center">
+									<a href="#">
+										<img src="assets/images/github.png" alt="Github" class="img-responsive">
+									</a>
+								</div>
+								<div class="col-xs-4 text-center">
+									<a href="#">
+										<img src="assets/images/stackoverflow.png" alt="Stackoverflow" class="img-responsive">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<footer class="modal-footer" id="footer">Copyright @ Adam Haag 2017</footer>
+		<div class="footer">Copyright 2017 Adam Haag</div>
 	</div>
-
 </body>
-
 </html>

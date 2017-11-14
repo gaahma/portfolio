@@ -11,8 +11,11 @@ module.exports = function(app){
 
   app.get("/portfolio", (req, res) => (
     res.render("portfolio")
-  ))
+  ));
 
+  app.get("/sent", (req, res) => (
+    res.render("emailSent")
+  ));
 }
 
 

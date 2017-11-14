@@ -1,0 +1,98 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: #efefef;
+}
+
+
+#wrapper{
+	min-height: 100%;
+	margin:0;
+	padding:0;
+	height: auto;
+	position: relative;
+}
+
+#content {
+	padding-bottom: 100px;  /* Height of footer + some extra*/
+	font-family: Helvetica, "Times New Roman", serif, sans-serif;
+	font-size: large;
+
+}
+
+#about-me {
+	margin-right: 10px;
+	margin-bottom: 10px;
+	float: left;	
+}
+
+.navbar-header .navbar-brand {
+	color: #fff;
+}
+
+.connect-header {
+	text-align: center;
+	font-size: x-large;
+}
+
+.footer {
+
+	color: #9d9d9d;
+	text-align: center;
+	width: 100%;
+	height: 60px;
+	background-color: #222;
+	padding-top: 20px;
+	position: absolute;
+	bottom: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+
+.color-grey {
+	background-color: #dadada;
+}
+
+.bottom-margin {
+	margin-bottom: 5%;
+}
+
+.styled-button {
+	color: #fff;
+	background-color: #222;
+}
+
+
+.project {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	text-decoration: none;
+	color: #eee;
+	position: relative;
+}
+
+.project-link {
+	margin-bottom: 10%;
+}
+
+.project-label {
+	padding: 2% 2%;
+	background-color: #222;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	bottom: 10%;	
+	font-size: small !important;
+}
+
+@media screen and (max-width: 640px){
+
+
+}
