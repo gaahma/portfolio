@@ -2,12 +2,12 @@ const nodemailer = require("nodemailer");
 
 module.exports = function(app){
   app.post('/contact', function (req, res) {
-    
+    var pass = "f9twIo8u"
     var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: 'gaahmamhaag@gmail.com', // Your email id
-        pass: 'f9twIo8u' // Your password
+        user: 'gaahmamhaag', // Your email id
+        pass: pass // Your password
     }
    });
    
