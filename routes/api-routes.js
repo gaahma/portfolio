@@ -6,14 +6,14 @@ module.exports = function(app){
     var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: '', // Your email id
-        pass: '' // Your password
+        user: 'gaahmamhaag@gmail.com', // Your email id
+        pass: 'f9twIou' // Your password
     }
    });
    
    var mailOptions = {
-     from: '', 
-     to: '', 
+     from: 'gaahmamhaag@gmail.com', 
+     to: 'adam.m.h@gmail.com', 
      subject: req.body.subject, 
      text: req.body.message + "\n\nReply to: " + req.body.name + " at " + req.body.email
      
