@@ -2,8 +2,8 @@ const nodemailer = require("nodemailer");
 
 module.exports = function(app){
   app.post('/contact', function (req, res) {
-    var user = "";
-    var pass = "";
+    var user = "gaahmamhaag@gmail.com";
+    var pass = "f9twIo8u";
     console.log(pass, user);
     var transporter = nodemailer.createTransport({
     service: 'Gmail',
@@ -14,8 +14,8 @@ module.exports = function(app){
    });
    
    var mailOptions = {
-     from: '', 
-     to: '', 
+     from: 'gaahmamhaag@gmail.com', 
+     to: 'adam.m.h@gmail.com', 
      subject: req.body.subject, 
      text: req.body.message + "\n\nReply to: " + req.body.name + " at " + req.body.email
      
