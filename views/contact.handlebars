@@ -6,18 +6,79 @@
   <div class="col-md-8">
     <div class="panel panel-default">
       <div class="panel-body color-grey">
-        <form action="/contact" method="POST">
+        <form id="contact-form">
           <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" name="name" class="form-control" id="name">
+            <input type="text" name="name" class="form-control">
           </div>
           <div class="form-group">
             <label for="email">Email Address:</label>
-            <input type="email" name="email"class="form-control" id="email">
+            <input type="email" name="email"class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" name="subject" class="form-control">
           </div>
           <div class="form-group">
             <label for="message">Message:</label>
-            <textarea name="message" id="" cols="30" rows="10" class="form-control"></textarea>
+            <textarea name="message" cols="30" rows="10" class="form-control"></textarea>
           </div>
-          <button type="submit" class="btn styled-button">Submit</button>
+          <button class="btn styled-button" id="sendEmail">Submit</button>
         </form>
+
+        <div id="modal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class='text-center' id="modalMessage">All fields are required.  Email must be a valid email address</p>
+          </div>
+        </div>
+<script>
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+var modal = document.getElementById('modal');
+var span = document.getElementsByClassName("close")[0];
+
+modalMessage = function(message) {
+    document.getElementById("modalMessage").innerHTML = message;
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+  $(document).ready(function(){
+    $("#sendEmail").on("click", function(){
+      event.preventDefault();
+      var form = $("#contact-form :input");
+      var values = {};
+      form.each(function() {
+          values[this.name] = $(this).val();
+      });
+      const {name, email, message, subject} = values;
+
+      if (!name || !email || !message || !subject){
+        modalMessage("All fields are required");
+      } else if (!validateEmail(email)){
+        modalMessage("You must enter a valid email address");
+      } else {
+        $.ajax({
+          url: "/contact",
+          method: "POST",
+          data: values,
+          success: () => window.location.href = "/sent",
+          error: () => window.location.href = "/error"
+        });
+      }
+    });
+  });
+</script>

@@ -16,6 +16,10 @@ module.exports = function(app){
   app.get("/sent", (req, res) => (
     res.render("emailSent")
   ));
+
+  app.get("/error", (req, res) => (
+    res.render("oops")
+  ));
 }
 
 
