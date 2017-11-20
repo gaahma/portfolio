@@ -14,7 +14,7 @@ module.exports = function(app){
    });
    
    var mailOptions = {
-     from: req.body.email, 
+     from: user, 
      to: 'adam.m.h@gmail.com', 
      subject: req.body.subject, 
      text: req.body.message + "\n\nReply to: " + req.body.name + " at " + req.body.email
