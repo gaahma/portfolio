@@ -4,7 +4,6 @@ module.exports = function(app){
   app.post('/contact', function (req, res) {
     var user = "gaahmamhaag@yahoo.com";
     var pass = "f9twIo8u";
-    console.log(pass, user);
     var transporter = nodemailer.createTransport({
     service: 'yahoo',
     auth: {
