@@ -114,14 +114,16 @@ body {
 	background-color: rgb(0,0,0); /* Fallback color */
 	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
+#modalMessage{
+	margin-top:15px;
+}
 /* Modal Content/Box */
 .modal-content {
 	background-color: #dadada;
 	margin: 15% auto; /* 15% from the top and centered */
-	padding: 20px;
+	padding: 5%;
 	border: 1px solid #222;
-	width: 40%; /* Could be more or less, depending on screen size */
+	width: 60%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
