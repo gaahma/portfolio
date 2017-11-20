@@ -2,11 +2,13 @@ const nodemailer = require("nodemailer");
 
 module.exports = function(app){
   app.post('/contact', function (req, res) {
-    var pass = "f9twIo8u"
+    var user = "gaahmamhaag@gmail.com";
+    var pass = "f9twIo8u";
+    console.log(pass, user);
     var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: 'gaahmamhaag', // Your email id
+        user: user, // Your email id
         pass: pass // Your password
     }
    });
