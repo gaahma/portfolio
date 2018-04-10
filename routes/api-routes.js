@@ -1,20 +1,19 @@
 const nodemailer = require("nodemailer");
+const mail = require('./mailerInfo');  //super secret stuff in here, not posted to github.
 
 module.exports = function(app){
   app.post('/contact', function (req, res) {
-    var user = "gaahmamhaag@yahoo.com";
-    var pass = "f9twIo8u";
     var transporter = nodemailer.createTransport({
     service: 'yahoo',
     auth: {
-        user: user, // Your email id
-        pass: pass // Your password
+        user: mail.user, // Your email id
+        pass: mail.password // Your password
     }
    });
    
    var mailOptions = {
-     from: user, 
-     to: 'adam.m.h@gmail.com', 
+     from: mail.user, 
+     to: mail.myEmail, 
      subject: req.body.subject, 
      text: req.body.message + "\n\nReply to: " + req.body.name + " at " + req.body.email
      
